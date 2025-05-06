@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class GFC {
+private:
+    int private_variable;
+protected:
+    int protected_variable;
+public:
+    GFC() {
+        private_variable = 10;
+        protected_variable = 99;
+    }
+    friend class F; 
+};
+class F {
+public:
+    void display(GFC &t) {
+        cout << "The value of Private variable = " 
+             << t.private_variable << endl;  
+        cout << "The value of Protected variable = " 
+             << t.protected_variable << endl;
+    }
+};
+
+int main() {
+    GFC g;
+    F fri;
+    fri.display(g);
+    return 0;
+}
