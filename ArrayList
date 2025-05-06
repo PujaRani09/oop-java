@@ -38,7 +38,7 @@ class Main {
 
         System.out.println("\n--- Dictionary Contents ---");
         for (DictionaryEntry entry : dictionary) {
-            System.out.println(entry); // Changed to println for new line
+            System.out.println(entry);
         }
 
         scanner.close();
