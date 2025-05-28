@@ -1,0 +1,15 @@
+import java.util.HashMap;
+
+public class PersonAge {
+    public static void main(String[] args) {
+        HashMap<String, Integer> people = new HashMap<>();
+
+        people.put("John", 23);
+        people.put("Anna", 25);
+        people.put("Rohit", 20);
+
+        for (String name : people.keySet()) {
+            System.out.println(name + " : " + people.get(name));
+        }
+    }
+}
