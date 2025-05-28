@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class Adder {
+private:
+    T num1, num2;
+
+public:
+    Adder(T a, T b) : num1(a), num2(b) {}
+
+    // Friend function declaration and definition
+    friend T addNumbers(Adder<T> obj) {
+        return obj.num1 + obj.num2;
+    }
+};
+
+int main() {
+    Adder<int> obj1(10, 20);
+    cout << "Sum (int): " << addNumbers(obj1) << endl;
+
+    Adder<float> obj2(5.5, 4.5);
+    cout << "Sum (float): " << addNumbers(obj2) << endl;
+
+    return 0;
+}
