@@ -1,0 +1,59 @@
+// Importing required packages
+import java.util.ArrayList;
+import java.util.Scanner;
+
+// Car class to store size and color
+class Car {
+    String size;
+    String color;
+
+    // Constructor to initialize car object
+    Car(String size, String color) {
+        this.size = size;
+        this.color = color;
+    }
+
+    // toString method to display car details
+    public String toString() {
+        return size + " " + color;
+    }
+}
+
+// Main class
+public class CarList {
+    public static void main(String[] args) {
+        // Creating an ArrayList to store car objects
+        ArrayList<Car> cars = new ArrayList<>();
+
+        // Adding car objects to the list
+        cars.add(new Car("large", "purple"));
+        cars.add(new Car("medium", "red"));
+        cars.add(new Car("medium", "green"));
+        cars.add(new Car("small", "pink"));
+        cars.add(new Car("small", "orange"));
+        cars.add(new Car("large", "black"));
+        cars.add(new Car("small", "black"));
+        cars.add(new Car("small", "red"));
+
+        // Scanner to take user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Taking size input from the user
+        System.out.print("Enter size (small/medium/large): ");
+        String sizeInput = scanner.nextLine().toLowerCase();
+
+        // Taking color input from the user
+        System.out.print("Enter color: ");
+        String colorInput = scanner.nextLine().toLowerCase();
+
+        // Displaying matching cars
+        System.out.println("\nMatching cars:");
+        for (Car car : cars) {
+            if (car.size.equals(sizeInput) && car.color.equals(colorInput)) {
+                System.out.println(car);
+            }
+        }
+
+        scanner.close();
+    }
+}
